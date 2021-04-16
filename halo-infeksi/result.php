@@ -94,6 +94,23 @@ $TotalScore = $nyeriLuka + $lukaMerah + $lukaPanas + $lukaBengkak + $lukaBerdara
                     <!--      Wizard container        -->
                     <div class="wizard-container">
                         <div class="card wizard-card" data-color="azure" id="wizardProfile">
+                            <div class="wizard-header text-center">
+                                <h3 class="wizard-title">Halo Sahabat <?= $_GET['firstname']; ?>!</h3>
+                                <p class="category">
+                                    <?php
+                                    $tanggal_lahir = $_GET['lastname'];
+                                    $birthDate = new DateTime($tanggal_lahir);
+                                    $today = new DateTime("today");
+                                    if ($birthDate > $today) {
+                                        exit("0 tahun 0 bulan 0 hari");
+                                    }
+                                    $y = $today->diff($birthDate)->y;
+                                    $m = $today->diff($birthDate)->m;
+                                    $d = $today->diff($birthDate)->d;
+                                    echo 'Umur Kamu ' . $y . " tahun " . $m . " bulan " . $d . " hari";
+                                    ?>
+                                </p>
+                            </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-4 text-center">
