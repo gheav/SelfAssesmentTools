@@ -20,7 +20,7 @@
                     Mengenali tanda-tanda infeksi
                 </div>
                 <div class="card-body">
-                    <form action="/spotsehat.com/result.php" method="get">
+                    <form action="infectionCheckerResult.php" method="get">
                         <table class="table table-striped table-bordered">
                             <thead class="text-center">
                                 <th>No</th>

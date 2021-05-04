@@ -20,38 +20,36 @@
                 <div class="container">
                     <h3>Kalkulator <i>Body Surface Area</i> & <i>Body Mass Index</i></h3>
                     <hr>
-                    <div class="form-group row">
-                        <label for="height" class="col-sm-4 text-dark"><b> Tinggi Badan </b></label>
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                <input type="text" class="form-control " id="height" name="height" required>
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="basic-addon6">CM</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="hospitweightalization_date" class="col-sm-4 text-dark"><b> Berat Badan </b></label>
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="weight" name="weight" required>
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="basic-addon6">KG</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-block" id="calculate_BSA"> Hitung BSA & BMI</button>
-                    <hr>
-                    <br>
                     <div class="row">
-                        <div class="col-sm-6 border-right">
-                            <h3 id="resultBSA"><b>Body Surface Area :</b></h3>
-                        </div>
                         <div class="col-sm-6">
-                            <h3 id="resultBMI"><b>Body Mass Index :</b></h3>
+                            <div class="form-group row">
+                                <label for="height" class="col-sm-4 "><b> Tinggi Badan </b></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="height" name="height" required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon6">CM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mt-3">
+                                <label for="hospitweightalization_date" class="col-sm-4"><b> Berat Badan </b></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="weight" name="weight" required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon6">KG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-block float-end mt-4" id="calculate_BSA"> Hitung BSA & BMI</button>
                             <br>
+                            <h3 id="resultBMI"></h3>
+                        </div>
+                        <div class="col-sm-6 ">
+
                             <div id="descriptionBMI" hidden>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
@@ -98,7 +96,6 @@
                             </div>
                         </div>
                     </div>
-                    <br>
                 </div>
             </div>
         </div>
@@ -122,15 +119,11 @@
                     });
                 } else {
                     const body = height * weight;
-                    //Calculate BSA
-                    const bsa = Math.sqrt(body) / 60;
-                    const resultBSA = bsa.toFixed(2);
                     //calculate BMI
                     const height_meter = height / 100;
                     const height2 = height_meter * height_meter;
                     const bmi = weight / height2;
                     const resultBMI = bmi.toFixed(2);
-                    $("#resultBSA").html('<b>Body Surface Area : ' + resultBSA + ' m<sup>2</sup></b>');
                     $("#resultBMI").html('<b>Body Mass Index : ' + resultBMI + '  kg/m<sup>2</sup></b>');
                     $("#descriptionBMI").removeAttr("hidden");
                 }
